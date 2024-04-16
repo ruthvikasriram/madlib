@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mad Lib</title>
+<style>
+body {
+  font-family: 'Times New Roman', Times, serif; /* Change font to Times New Roman */
+  background-color: #1a1a1a; /* Dark gray background */
+  color: #ffffff; /* White text color */
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #ff9900; /* Orange title color */
+  font-size: 32px; /* Larger font size for the header */
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-container {
+  flex: 4;
+}
+
+/* Form styles */
+form {
+  padding: 20px;
+  background-color: #333333; /* Dark form background */
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1); /* White box shadow */
+  border-radius: 8px;
+}
+
+label {
+  font-weight: bold;
+  color: #ff9900; /* Orange label color */
+}
+
+input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ffffff; /* White border */
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #1a1a1a; /* Dark input background */
+  color: #ffffff; /* White text color */
+}
+
+.center-button {
+  text-align: center;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #ff9900; /* Orange button color */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffcc66; /* Lighter orange on hover */
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #0c0c0c;
+  background-color: #ff9900; /* Light gray footer text color */
+}
+
+/* Header styles */
+header {
+  background-color: #171717; /* Dark header background color */
+  padding: 10px 0;
+}
+</style>
+</head>
+<body>
+  <h1>Mad Lib</h1>
+
+  <div class="content">
+    <div class="text-container">
+      <form id="madLibForm" action="/submit" method="post">
+        <label for="PluralNoun">PluralNoun:</label>
+        <input type="text" id="PluralNoun" name="PluralNoun"><br><br>
+        <label for="verb">verb:</label>
+        <input type="text" id="verb" name="verb"><br><br>
+        <label for="adjective">Adjective:</label>
+        <input type="text" id="adjective" name="adjective"><br><br>
+        <label for="noun">noun:</label>
+        <input type="text" id="noun" name="noun"><br><br>
+        <label for="adverb">adverb:</label>
+        <input type="text" id="adverb" name="adverb"><br><br>
+        
+        
+        <div class="center-button">
+          <button type="submit">Generate Mad Lib</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>Last updated: 
+        <span id="lastModified"></span>
+    </p>
+  </footer>
+
+  <script>
+    var x = document.lastModified;
+    document.getElementById('lastModified').textContent = x;
+  </script>
+
+  <div id="madLibOutput" class="text-container"></div>
+</body>
